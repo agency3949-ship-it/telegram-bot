@@ -43,11 +43,15 @@ if __name__ == '__main__':
     print("ቦቱ በመሥራት ላይ ነው...")
         PORT = int(os.environ.get("PORT", 10000))
     RENDER_URL = "https://telegram-bot-1-i0ta.onrender.com"
+if __name__ == '__main__':
+    PORT = int(os.environ.get("PORT", 10000))
+    RENDER_URL = "https://telegram-bot-1-i0ta.onrender.com"
     
+    print("ቦቱ በመሠራት ላይ ነው...")
     application.run_webhook(
         listen="0.0.0.0",
         port=PORT,
         drop_pending_updates=True,
         webhook_url=f"{RENDER_URL}/"
 )
-
+    
