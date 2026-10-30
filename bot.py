@@ -41,4 +41,13 @@ if __name__ == '__main__':
     message_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message)
     application.add_handler(message_handler)
     print("ቦቱ በመሥራት ላይ ነው...")
-    application.run_polling()
+        PORT = int(os.environ.get("PORT", 10000))
+    RENDER_URL = "https://telegram-bot-1-i0ta.onrender.com"
+    
+    application.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        drop_pending_updates=True,
+        webhook_url=f"{RENDER_URL}/"
+)
+
